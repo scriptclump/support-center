@@ -1,0 +1,54 @@
+<div class="container-fluid" ng-controller="emailTemplateCtrl" ng-init="loadMembersTable();">
+    <div class="side-body padding-top">
+        <div class="panel fresh-color panel-success">
+            <div class="panel-heading">
+                <div class="title">Members</div>
+                <!--                <div class="card-title">
+                                    <div class="title">Members</div>
+                                </div>-->
+            </div>
+            <!--            <div class="card-body">-->
+            <!--                        {{data}}-->
+            <table datatable="ng"  class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email ID</th>
+                        <th>EMP ID</th>
+                        <th>Designation</th>
+                        <th>Mobile No.</th>
+                        <th>Alt No.</th>
+                        <th>Location</th>
+                        <th>Activated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in data">
+                        <td ng-if="can('80028564')">
+                        	<a style="font-weight: 600;text-decoration: underline;" href="/dashboard/emailTemplate/member-profile/{{x._id}}">
+                            	{{x.fName}}&nbsp;{{x.lName}}
+                        	</a>
+                        </td>
+                        <td ng-if="!can('80028564')">{{x.fName}}&nbsp;{{x.lName}}</td>
+                        <td>{{x.email}}</td>
+                        <td>
+                            {{x.empID}}
+                            <!-- <b ng-if="userObj.accessRole == 'admin'">
+                                <u>
+                                    <a  href="/dashboard/emailTemplate/member-profile/{{x._id}}">{{x.empID}}</a>
+                                </u>
+                            </b>
+                            <b ng-if="userObj.accessRole == 'member'">{{x.empID}}</b> -->
+                        </td>
+                        <td>{{x.designation}}</td>
+                        <td>{{x.mNum}}</td>
+                        <td>{{x.aNum}}</td>
+                        <td>{{x.location}}</td>
+                        <td>{{x.created | date:'yyyy-MM-dd'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        </div>-->
+    </div>
+</div>
