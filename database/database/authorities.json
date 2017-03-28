@@ -1,0 +1,102 @@
+{ 
+    "_id" : ObjectId("57ffb8e5ca437c2c6c63e34a"), 
+    "email" : "superuser@charterglobal.com", 
+    "role_id" : ObjectId("57ffb72eca437c2c6c63e33d"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5819c9efdac0950360a0c799"), 
+    "email" : "bsahoo@test.com", 
+    "role_id" : ObjectId("5810ab895483160d70305799"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5819cd6eb8cc9f1cb4465cbf"), 
+    "email" : "nipun15@gmail.com", 
+    "role_id" : ObjectId("5810ab895483160d70305799"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5821cbd9ba02312b6cb18c7f"), 
+    "email" : "basanth13@gmail.com", 
+    "role_id" : ObjectId("58049c9536e1e13990240041"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5821cbe0ba02312b6cb18c80"), 
+    "email" : "basanth@gmail.com", 
+    "role_id" : ObjectId("57ffb72eca437c2c6c63e33d"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5825965a6c9b911fa4306961"), 
+    "email" : "kagarwal@charterglobal.com", 
+    "role_id" : ObjectId("58049cb136e1e13990240043"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58259fd96341ac216c9d7e06"), 
+    "email" : "basanth123@gmail.com", 
+    "role_id" : ObjectId("58049cb136e1e13990240043"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5825acb96341ac216c9d7e22"), 
+    "email" : "cmothkuri@charterglobal.com", 
+    "role_id" : ObjectId("58049cb136e1e13990240043"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58296ecdb380b71ee85c7f9a"), 
+    "email" : "manager@charterglobal.com", 
+    "role_id" : ObjectId("5810ab895483160d70305799"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5829c93fc805b12bc88261e5"), 
+    "email" : "bsahoo@charterglobal.com", 
+    "role_id" : ObjectId("57ffb72eca437c2c6c63e33d"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b05b977648428f8b30e6b"), 
+    "email" : "sahoo@charterglobal.com", 
+    "role_id" : ObjectId("57ffb72eca437c2c6c63e33d"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b08c177648428f8b30e6e"), 
+    "email" : "reddy@gmail.com", 
+    "role_id" : ObjectId("5810ab895483160d70305799"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b09a177648428f8b30e71"), 
+    "email" : "gfh@fdg.vfhg", 
+    "role_id" : ObjectId("5810ab895483160d70305799"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b0f6a77648428f8b30e7a"), 
+    "email" : "prasanth@charterglobal.com", 
+    "role_id" : ObjectId("57ffb72eca437c2c6c63e33d"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b137e77648428f8b30e7d"), 
+    "email" : "soumya@gmail.com", 
+    "role_id" : ObjectId("58049c9536e1e13990240041"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583bf78c8e97ec13dcc2d294"), 
+    "email" : "bgurram@charterglobal.com", 
+    "role_id" : ObjectId("58049cb136e1e13990240043"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583edaf1c47e64216cf02d46"), 
+    "email" : "nchenreddy@charterglobal.com", 
+    "role_id" : ObjectId("5810ab895483160d70305799"), 
+    "__v" : NumberInt(0)
+}

@@ -4,13 +4,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 
-
-.side-menu:hover + .navbar{
+/*.side-menu:hover + .navbar{
     margin-left: 140px;
 }
 .side-menu:hover + .navbar + div .container-fluid {
     margin-left: 140px;
-}
+}*/
 
 .login_navbar{
 	padding-left: 0px !important;
@@ -246,3 +245,25 @@ div.dataTables_wrapper div.dataTables_paginate a:hover{
 #import_members .dataTables_wrapper .dataTables_length{
 	display: none !important;
 }
+.tab-content{
+        width:103.2%;
+        margin-left:-20px;
+    }
+    .col-xs-14{
+        border: 1px solid grey;   
+    }
+    .col-xs-14 li a {
+        color:white;
+    }
+    .panel{
+        margin:5px;
+    }
+    .tab-pane a {
+    margin-left:5px;
+    }
+    .tab-pane span{
+        margin-left:30px;
+    }
+    .table{
+    cursor: default;
+    }

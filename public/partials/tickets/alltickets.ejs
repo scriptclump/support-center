@@ -2,6 +2,14 @@
 <div class="container-fluid" ng-controller="ticketCtrl" ng-init="loadTicketsFrom();">
     <div class="side-body padding-top">
         <div class="row">
+        <div class="alert alert-success col-md-12" id="success-alert" style="display: none">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center>Ticket {{ticketID}} has been deleted successfully</center>
+            </div>
+            <div class="alert alert-danger col-md-12" id="danger-alert" style="display: none">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center> Unable delete. Please try again. </center>
+            </div>
         </div>
         <div>
             <div class="panel fresh-color panel-success">
@@ -13,7 +21,7 @@
                         <div class="col-md-12" style="margin: 0 !important;text-align: center">
                             <label for="searchbystatus" class="col-sm-2 control-label" style="padding: 0;line-height: 26px;">Search By Status: </label>
                             <div class="col-sm-4">
-		                        <select ng-model="data.status" ng-change="loadTicketsFrom(data.status)" class="form-control" selected style="height: 30px;">
+		                        <select id="ticketsByStatus" ng-model="data.status" ng-change="loadTicketsFrom(data.status)" class="form-control" selected style="height: 30px;">
 		                          <option value="New">New</option>
 		                          <option value="Open" ng-selected="{{data.status == data.status}}">Open</option>
 		                          <option value="Pending for Approval">Pending For Approval</option>
@@ -25,7 +33,7 @@
 	                        </div>
                         </div>
 	                </div>
-                    <table class="table" datatable="ng" width="100%" dt-options="dtOptions" >
+                    <table class="table table-responsive" datatable="ng" dt-options="dtOptions" >
                         <thead>
                             <tr style="color:#262525">
                                 <th>Ticket ID</th>
@@ -36,13 +44,14 @@
                                 <th>Closed Date</th>
                                 <th>Hrs Spent</th>
                                 <th>View | Priority | Type</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody >
                             <tr ng-repeat="y in ticketsList |orderBy: '-ticketID'">
                                 <th>
-                                    <u ng-if="can('64159294') || can('14764455')">
-                                        <a href="/dashboard/tickets/ticket-detail/{{y.ticketID}}">{{y.ticketID}}</a>
+                                    <u ng-if="can('64159294') || can('14764455')" style="text-decoration: none;">
+                                        <!-- <a href="/dashboard/tickets/ticket-detail/{{y.ticketID}}"> -->{{y.ticketID}}<!-- </a> -->
                                     </u>
                                     <span ng-if="!can('64159294') && !can('14764455')">{{y.ticketID}}</span>
                                 </th>
@@ -70,7 +79,7 @@
 
                                <td >
                                     <!-- <button class="btn btn-default" ng-click="open(y.description)">View</button> -->
-                                    <div style="margin-left:10%; text-transform: capitalize;"><i class="fa fa-eye" aria-hidden="true" ng-click="open(y.description)" title="Click here to view" style="font-size:18px;"></i>  |  {{y.priority}}  | <span ng-if=" y.issue_type_cat_1 != undefined" >{{y.issue_type_cat_1}}<br></span>
+                                    <div style="margin-left:10%; text-transform: capitalize;"><i class="fa fa-eye" aria-hidden="true" ng-click="open(y.description)" title="Click here to view" style="font-size:18px;cursor:pointer;"></i>  |  {{y.priority}}  | <span ng-if=" y.issue_type_cat_1 != undefined" >{{y.issue_type_cat_1}}<br></span>
                                     <span ng-if=" y.issue_type_cat_1 === null" >-<br></span> </div>
 
 
@@ -83,6 +92,13 @@
 
 
                                 </td>
+                                <td align="left"><form class="form-horizontal" ng-submit="deleteTicket(y.ticketID)" name="DeleteticketForm" enctype="multipart/form-data">
+                                <a class="btn btn-sm btn-info" style="border:none;" href="/dashboard/tickets/ticket-detail/{{y.ticketID}}" title="Ticket details"><i class="fa fa-thumbs-up" aria-label="edit"></i></a>
+                                <div style="float:right;" ng-if=" y.status === 'Close'">
+                                   <button id="delete" type="submit" value="submit" class="btn btn-danger btn-sm" style="background-color: #C9302C;border:none;" title="Delete Ticket"><i class="fa fa-trash-o fa-lg" aria-label="Delete"></i></button></div>
+                                    </form>
+                                </td>
+                                <!-- <td ng-if="y.status != 'Close'" align="center">-</td> -->
                             </tr>
                         </tbody>
                     </table>           

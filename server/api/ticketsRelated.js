@@ -19,13 +19,10 @@ router.post('/mytickets', passport.authenticate('jwt', {session: false}), functi
     ticketsController.getMyTickets(req, res);
 });
 
+
 router.get('/ticket', passport.authenticate('jwt', {session: false}), function (req, res) {
     //console.log('Hi i received cal');
     ticketsController.getTicket(req, res);
-});
-router.get('/filterTicketData', passport.authenticate('jwt', {session: false}), function (req, res) {
-   console.log('2nd call: In the route');
-   ticketsController.filterTicketData(req, res);
 });
 
 router.get('/ticketCount', passport.authenticate('jwt', {session: false}), function (req, res) {
@@ -37,6 +34,12 @@ router.get('/ticket-detail', passport.authenticate('jwt', {session: false}), fun
     console.log('ticket detail trigger');
     //console.log(req.query);
     ticketsController.getTicketById(req, res);
+});
+
+router.post('/delete-Ticket', passport.authenticate('jwt', {session: false}), function (req, res) {
+    console.log('ticket detail trigger');
+    //console.log(req.query);
+    ticketsController.deleteTicket(req, res);
 });
 
 router.post('/ticket-details-update', passport.authenticate('jwt', {session: false}), function (req, res) {
@@ -128,7 +131,7 @@ var storage = multer.diskStorage({//multers disk storage settings
     destination: function (req, file, cb) {
         //console.log(file);
         //aws_s3(file, '1476450831364');
-        cb(null, './public/attachments/');
+        cb(null, '././public/attachments/');
     },
     filename: function (req, file, cb) {
         var datetimestamp = Date.now();

@@ -1,0 +1,186 @@
+{ 
+    "_id" : ObjectId("583c01968e97ec13dcc2d2c3"), 
+    "role_id" : "10396482", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e00"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583c01968e97ec13dcc2d2c5"), 
+    "role_id" : "10396482", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e04"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583c01968e97ec13dcc2d2c4"), 
+    "role_id" : "10396482", 
+    "privilege_ref" : ObjectId("5800cf3622501ea641e2ff61"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583c01968e97ec13dcc2d2c6"), 
+    "role_id" : "10396482", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e07"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583edae7c47e64216cf02d45"), 
+    "role_id" : "39656488", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e03"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583edae7c47e64216cf02d44"), 
+    "role_id" : "39656488", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e07"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d40"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dfc"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d41"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dfd"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d42"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dfe"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d46"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e06"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d45"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e05"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d47"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e07"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d44"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e04"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d43"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dff"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d49"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("5812eb85ec3581496c18ef4e"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58539cd28f1af014d4c09d48"), 
+    "role_id" : "22797888", 
+    "privilege_ref" : ObjectId("57ffc183631f9e40732a4e08"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928957"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e01"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928956"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e00"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928958"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e02"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f492895c"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dfe"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f492895d"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dff"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928961"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e07"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928962"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffc183631f9e40732a4e08"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f492895a"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dfc"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f492895b"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4dfd"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f492895f"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e05"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928964"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("5812eb85ec3581496c18ef4e"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928960"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e06"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928959"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("5800cf3622501ea641e2ff61"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f492895e"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e04"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58578b0c8886e018f4928963"), 
+    "role_id" : "16739320", 
+    "privilege_ref" : ObjectId("57ffb5cc631f9e40732a4e03"), 
+    "__v" : NumberInt(0)
+}

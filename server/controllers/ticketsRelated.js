@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 var config = require('../config/config');
-var htmlToText = require('html-to-text');
+//var htmlToText = require('html-to-text');
 var attachmentPath = config.attachmentsPath;
 var applicationUrl = config.applicationUrl;
 
@@ -35,7 +35,7 @@ var multer = require('multer');
 
 var storage = multer.diskStorage({//multers disk storage settings
     destination: function (req, file, cb) {
-        cb(null, './public/attachments/');
+        cb(null, '././public/attachments/');
     },
     filename: function (req, file, cb) {
         var datetimestamp = Date.now();
@@ -56,7 +56,21 @@ var getTimeSpent = function (startTime, endTime) {
     return minutes;
 };
 
+exports.deleteTicket = function (req, res) {
+var tid = req.body.tid;
+console.log("request remove id",req.body);
 
+ticketModel.remove({ticketID: tid}, function (err, updated) {
+                    if (err) {
+                       res.status(500).json(err);
+                    } else {
+                        res.status(200);
+                        res.send({success: true, data: updated});
+                    }
+                    ;
+                });
+
+}
 exports.getTicketCount = function (req, res) {
     var params = {};
     if (req.query) {
@@ -182,6 +196,7 @@ var turnONTracker = function (params, callback) {
     });
 }
 
+
 exports.ticketHrsTrackerON = function (req, res) {
     var params = {
         ticketID: req.body.ticketID,
@@ -271,7 +286,7 @@ exports.createTicket = function (data, callback) {
     }, function (err, create) {
         if (err) {
             console.log(err);
-            return callback({sucess: false, msg: 'Ticket has not been regestered'});
+            return callback({sucess: false, msg: 'Ticket has not been registered'});
         } else {
             console.log('create success with ID ', create.ticketID);
             var title = '#' + create.ticketID + ' ' + create.title;
@@ -289,7 +304,7 @@ exports.createTicket = function (data, callback) {
 };
 
 exports.createTicketWithAttachment = function (req, res) {
-   
+    //console.log('Inside Create Ticket Server1');
     var StartedAt = Date.now();
     var startDateFormated = new Date(StartedAt);
     var expected_end_time = startDateFormated.setHours(startDateFormated.getHours() + 1);
@@ -318,14 +333,15 @@ exports.createTicketWithAttachment = function (req, res) {
                     return res.json({error_code: 1, err_desc: err});
                 } else {
                     var FilesUploaded = req.files;
+                    console.log(req.files);
                     FilesUploaded.forEach(function (currentVal, index, array) {
                         var attachment = {};
                         var bitmap = fs.readFileSync(currentVal.path);
                         attachment.content = new Buffer(bitmap);
-                        attachment.fileName = currentVal.filename;                     
+                        attachment.fileName = currentVal.filename;         
                         attachment.length = currentVal.size;
                        
-                        var attachment_url = attachmentPath+attachment.fileName;                       
+                        var attachment_url = attachmentPath+attachment.fileName;
                         ticketModel.findOneAndUpdate({ticketID: create.ticketID}, {$push: {img_Path: attachment_url}},
                                 function (err, suc) {
                                     if (err) {
@@ -560,23 +576,29 @@ exports.ticketOwnerUpdate = function (req, res) {
 
 exports.activityLogsapproval = function (req, res) {
     console.log('..............',req.body);
+    var value = {};
+    value.changed_status_time =req.body.changed_status_time;
     var tid = req.body.tid;
-    var msg = req.body.msg;
+    
     var msg1 = req.body.msg1;
+   
     ticketModel.findOneAndUpdate({ticketID: tid},
             {
-             $push: {'activityLogs': {$each: [ req.body.msg1, req.body.msg ] }}
+             $set: value,
+            // $push: {'activityLogs': {$each: [ req.body.msg1, req.body.msg ] }}
+            $push: {'activityLogs': req.body.msg1}
             },
             function (err, updated) {
                 if (err) {
                     console.log("error", err);
-                    
+
                 } else {
-                    
+
                     res.status(200);
                     res.send({success: true, msg: 'Ownership has been updated.'});
                 }
             });
+
 };
 
 exports.getMemberTickets = function (req, res) {
@@ -615,7 +637,7 @@ exports.getApproverTickets = function (req, res) {
     console.log("inside log", req.query.memberID);
 
 
-    ticketModel.find({approved_list: {'$in': [req.query.memberID]}}, function (err, data) {
+    ticketModel.find({$and: [{approved_list: {'$in': [req.query.memberID]}}, {'status': ['Pending for Approval']}]}, function (err, data) {
         if (err) {
             console.log("error", err);
             return res.status(500).json("Internal Database error");
@@ -706,11 +728,12 @@ exports.sendEmailToApprover = function (req, res) {
                     console.log("error");
                 } else {
                 	var approverName = details[0].fName + " " + details[0].lName;
-                	console.log("approverlist--------",approverName);
+                	//console.log("approverlist--------",approverName);
                      var description = htmlToText.fromString(req.query.description, {
                          wordwrap: 80,
                          table: [], 
                          hideLinkHrefIfSameAsText :true ,
+
                          linkHrefBaseUrl :false ,
                          preserveNewlines : false ,
                          uppercaseHeadings :false ,

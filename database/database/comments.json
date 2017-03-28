@@ -1,0 +1,56 @@
+{ 
+    "_id" : ObjectId("581859781efaf114bcc0507c"), 
+    "ticketID" : "10071", 
+    "reportedBy" : "Admin", 
+    "reportedByEmail" : "bgurram@charterglobal.com", 
+    "comment" : "\n\n \n  \n  \n  New Ticket Alert\n \n \n\t\n\t\t<table>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p><b>IT Help Desk<b></b></b></p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p>Hi <b></b>,</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tYour request has been registered successfully. Registered Ticket ID: <b>10071</b>.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<a href=\"http://192.168.2.127:5000/dashboard/tickets/ticket-detail/10071\" target=\"_blank\"><b>Click Here</b></a> for more details.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThank you for contacting us. Our team will get back to you as soon as possible.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThanks!<br />\n\t\t\t\t\t\t\t\t\tHelp Desk\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t\n\t\t\t\t\t<p>© 2016 Charter Global, All rights reserved.</p>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t</table>\n\t\n \n\n", 
+    "commentedByName" : "Admin", 
+    "comment_type" : "team_emp", 
+    "created" : ISODate("2016-11-01T08:59:36.457+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7fe3f7601990b28073"), 
+    "ticketID" : "10032", 
+    "reportedBy" : "Admin", 
+    "reportedByEmail" : "bgurram@charterglobal.com", 
+    "comment" : "\n\n \n  \n  \n  New Ticket Alert\n \n \n\t\n\t\t<table>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p><b>IT Help Desk<b></b></b></p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p>Hi <b></b>,</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tYour request has been registered successfully. Registered Ticket ID: <b>10032</b>.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<a href=\"http://192.168.2.127:5000/dashboard/tickets/ticket-detail/10032\" target=\"_blank\"><b>Click Here</b></a> for more details.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThank you for contacting us. Our team will get back to you as soon as possible.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThanks!<br />\n\t\t\t\t\t\t\t\t\tHelp Desk\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t\n\t\t\t\t\t<p>© 2016 Charter Global, All rights reserved.</p>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t</table>\n\t\n \n\n", 
+    "commentedByName" : "Admin", 
+    "comment_type" : "team_emp", 
+    "created" : ISODate("2016-11-01T09:16:47.430+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58186757e3f7601990b2807a"), 
+    "ticketID" : "10055", 
+    "reportedBy" : "Admin", 
+    "reportedByEmail" : "bgurram@charterglobal.com", 
+    "comment" : "\n\n \n  \n  \n  New Ticket Alert\n \n \n\t\n\t\t<table>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p><b>IT Help Desk<b></b></b></p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p>Hi <b>admin member2</b>,</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tNeed your Approval for this ticket. Ticket ID: <b>10055</b>.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<a href=\"http://192.168.2.127:5000/dashboard/tickets/ticket-detail/10055\" target=\"_blank\"><b>Click Here</b></a> for more details.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tPlease login to the application to provide comments. (or) \n\t\t\t\t\t\t\t\t\tPlease reply back to the mail without deleting subject line.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThanks!<br />\n\t\t\t\t\t\t\t\t\tHelp Desk\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t\n\t\t\t\t\t<p>© 2016 Charter Global, All rights reserved.</p>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t</table>\n\t\n \n\n", 
+    "commentedByName" : "Admin", 
+    "comment_type" : "team_approver", 
+    "created" : ISODate("2016-11-01T09:58:47.809+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58186762e3f7601990b2807b"), 
+    "ticketID" : "10081", 
+    "reportedBy" : "Admin", 
+    "reportedByEmail" : "bgurram@charterglobal.com", 
+    "comment" : "\n\n \n  \n  \n  New Ticket Alert\n \n \n\t\n\t\t<table>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t<table>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p><b>IT Help Desk<b></b></b></p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<p>Hi <b></b>,</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tYour request has been registered successfully. Registered Ticket ID: <b>10081</b>.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<a href=\"http://192.168.2.127:5000/dashboard/tickets/ticket-detail/10081\" target=\"_blank\"><b>Click Here</b></a> for more details.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThank you for contacting us. Our team will get back to you as soon as possible.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tThanks!<br />\n\t\t\t\t\t\t\t\t\tHelp Desk\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</table>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t<p> </p>\n\t\t\t\t\t\n\t\t\t\t\t<p>© 2016 Charter Global, All rights reserved.</p>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t</table>\n\t\n \n\n", 
+    "commentedByName" : "Admin", 
+    "comment_type" : "team_emp", 
+    "created" : ISODate("2016-11-01T09:58:58.587+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("583ea70c7bc2841a3c569768"), 
+    "ticketID" : "10149", 
+    "reportedBy" : "Bhavani", 
+    "reportedByEmail" : "bgurram@charterglobal.com", 
+    "comment" : "ghgfdhgdghf", 
+    "commentedByID" : ObjectId("58186c585c33480edc9220ad"), 
+    "commentedByName" : "nipunreddy", 
+    "comment_type" : "team_emp", 
+    "created" : ISODate("2016-11-30T10:16:44.040+0000"), 
+    "__v" : NumberInt(0)
+}

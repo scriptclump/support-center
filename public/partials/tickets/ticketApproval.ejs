@@ -4,13 +4,13 @@
             <div class="panel-heading">
                 <div class="title">Approval Tickets</div>
             </div>
-            <table datatable="ng" class="table table-responsive" dt-options="dtOptions">
+            <table datatable="ng" class="table table-responsive" dt-options="ticketlist">
                 <thead>
                     <tr>
                         <th>Ticket ID</th>
                         <th>Subject</th>
                         <th>Status</th>
-                        <th>Created Date</th>
+                        <th>Date</th>
                         <th>Description</th>
                         <th>Employee Name</th>
                     </tr>
@@ -24,7 +24,7 @@
                             {{y.title| limitTo: limit}}<a ng-show="y.title.length > limit" href ng-click="limit = y.title.length; moreShown = true">... </a>                        
                         </td>
                         <td>{{y.status}}</td>
-                        <td>{{y.reportedDate| date:'MM/dd/yyyy'}}</td>
+                        <td>{{y.changed_status_time| date:"MM/dd/yyyy 'at' h:mma"}}</td>
                         <td>
                             <a  href="#" tooltip-placement="right" tooltip="{{y.description}}" class="red-tooltip">{{y.description|limitTo:20}}</a>
                         </td>

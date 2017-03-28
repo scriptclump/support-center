@@ -1,0 +1,114 @@
+{ 
+    "_id" : ObjectId("57e53474e4da70181cf869c2"), 
+    "designation" : "Super User", 
+    "email" : "superuser@charterglobal.com", 
+    "empID" : "EMP_0000", 
+    "fName" : "Super", 
+    "lName" : "User", 
+    "location" : "Hyderabad", 
+    "mNum" : "9876543210", 
+    "created" : ISODate("2016-09-23T13:56:04.355+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58186c585c33480edc9220ad"), 
+    "fName" : "nipun", 
+    "lName" : "reddy", 
+    "email" : "nchenreddy@charterglobal.com", 
+    "location" : "Hyderabad", 
+    "empID" : "ST20122016", 
+    "designation" : "Se", 
+    "aNum" : "", 
+    "mNum" : "9874563217", 
+    "created" : ISODate("2016-11-01T10:20:08.919+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5819c9efdac0950360a0c796"), 
+    "email" : "bsahoo@test.com", 
+    "fName" : "admin", 
+    "lName" : "member", 
+    "mNum" : "", 
+    "aNum" : "", 
+    "empID" : "ST201220004", 
+    "location" : "Hyderabad", 
+    "designation" : "Administrator", 
+    "created" : ISODate("2016-11-02T11:11:43.679+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5819c9efdac0950360a0c797"), 
+    "email" : "bgurram@charterglobal.com", 
+    "fName" : "Bhavani", 
+    "lName" : "B", 
+    "mNum" : "", 
+    "aNum" : "", 
+    "empID" : "ST201220006", 
+    "location" : "Hyderabad", 
+    "designation" : "SE", 
+    "created" : ISODate("2016-11-02T11:11:43.681+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582477c08137730ce49b6341"), 
+    "fName" : "sagar", 
+    "lName" : "gupta", 
+    "email" : "kagarwal@charterglobal.com", 
+    "location" : "Hyderabad", 
+    "empID" : "ST45236", 
+    "designation" : "ghgh", 
+    "aNum" : "8956233265", 
+    "mNum" : "9874563219", 
+    "created" : ISODate("2016-11-10T13:36:00.368+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58296eccb380b71ee85c7f99"), 
+    "email" : "manager@charterglobal.com", 
+    "fName" : "approved", 
+    "lName" : "manager4", 
+    "mNum" : "9856547589", 
+    "aNum" : "8956587458", 
+    "empID" : "ST201222006", 
+    "location" : "Hyderabad", 
+    "designation" : "Administrator", 
+    "created" : ISODate("2016-11-14T07:59:08.895+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b05b977648428f8b30e6a"), 
+    "fName" : "sahoo", 
+    "lName" : "balram", 
+    "email" : "sahoo@charterglobal.com", 
+    "location" : "Noida", 
+    "empID" : "ST20122016", 
+    "designation" : "hjhgj", 
+    "created" : ISODate("2016-11-15T12:55:21.440+0000"), 
+    "__v" : NumberInt(0), 
+    "mNum" : "", 
+    "aNum" : ""
+}
+{ 
+    "_id" : ObjectId("582b0f6a77648428f8b30e79"), 
+    "fName" : "prasanth", 
+    "lName" : "reddy", 
+    "email" : "prasanth@charterglobal.com", 
+    "location" : "Noida", 
+    "empID" : "ST20122016", 
+    "designation" : "jdeveloper", 
+    "created" : ISODate("2016-11-15T13:36:42.987+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582b137e77648428f8b30e7c"), 
+    "fName" : "soumya", 
+    "lName" : "reddy", 
+    "email" : "soumya@gmail.com", 
+    "location" : "Noida", 
+    "empID" : "ST20122016", 
+    "designation" : "ghfghb", 
+    "created" : ISODate("2016-11-15T13:54:06.251+0000"), 
+    "__v" : NumberInt(0), 
+    "mNum" : null, 
+    "aNum" : null
+}

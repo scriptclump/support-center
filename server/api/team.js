@@ -30,6 +30,10 @@ router.get('/members',passport.authenticate('jwt', {session: false}), function (
     teamController.membersList(res);
 });
 
+router.post('/delete-Member',passport.authenticate('jwt', {session: false}), function (req, res) {
+    teamController.deleteMember(req, res);
+});
+
 router.post('/member-detail',passport.authenticate('jwt', {session: false}), function (req, res) {
     console.log('entered Member Detail Controller',req.body.memberID);
     teamController.getMemberById(req.body.memberID, res);
@@ -47,7 +51,7 @@ router.post('/update',passport.authenticate('jwt', {session: false}), function (
 // importing function for primary execution calls
 var storage = multer.diskStorage({                  
                     destination: function (req, file, cb) {
-                        cb(null, '../config/attachments/member-sheets/')
+                        cb(null, 'E:/it-help-desc/server/config/attachments/member-sheets')
                     },
                     filename: function (req, file, cb) {
                         var datetimestamp = Date.now();
@@ -59,10 +63,11 @@ var storage = multer.diskStorage({
                             storage: storage,
                             fileFilter : function(req, file, callback) { 
                                 console.log('file received',file);
-                            //file filter
+                                //file filter
                                 if (['xls', 'xlsx'].indexOf(file.originalname.split('.')[file.originalname.split('.').length-1]) === -1) {
                                     return callback(new Error('Wrong extension type'));
-                                }
+                                    //console.log("jhjuhfuihu");
+                                } 
                                 callback(null, true);
                             }
  }).single('file');
@@ -72,6 +77,7 @@ router.post('/import-members', function(req, res) {
         console.log('received Request');
         var exceltojson;
         upload(req,res,function(err){
+            //console.log("Error",err);
             console.log(req.files);
             console.log(req.file);
             if(err){

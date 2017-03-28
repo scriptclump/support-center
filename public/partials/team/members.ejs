@@ -1,5 +1,15 @@
 <div class="container-fluid" ng-controller="teamCtrl" ng-init="loadMembersTable();">
     <div class="side-body padding-top">
+    <div class="row">
+        <div class="alert alert-success col-md-12" id="success-alert" style="display: none">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center>Member <b style="color:red;">{{fName}} {{lName}} </b>has been deleted successfully</center>
+            </div>
+            <div class="alert alert-danger col-md-12" id="danger-alert" style="display: none">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center> Unable delete. Please try again. </center>
+            </div>
+        </div>
         <div class="panel fresh-color panel-success">
             <div class="panel-heading">
                 <div class="title">Members</div>
@@ -8,7 +18,7 @@
                                 </div>-->
             </div>
             <!--            <div class="card-body">-->
-            <!--                        {{data}}-->
+                             <!-- <pre>       {{data}} </pre> -->
 
             <table datatable="ng"  class="table table-responsive">
                 <thead>
@@ -17,20 +27,20 @@
                         <th>Email ID</th>
                         <th>Employee ID</th>
                         <th>Designation</th>
-                        <th>Mobile No.</th>
-                        <th>Alternative Mobile No.</th>
+                        <th>Mobile</th>
+                        <!-- <th>Alternative Mobile No.</th> -->
                         <th>Location</th>
                         <th>Activated</th>
+                        <th ng-if="can('80028564')">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="x in data">
-                        <td ng-if="can('80028564')">
-                        	<a style="font-weight: 600;text-decoration: underline;" href="/dashboard/team/member-profile/{{x._id}}">
-                            	{{x.fName}}&nbsp;{{x.lName}}
-                        	</a>
+                        <td style="text-transform: capitalize;"> 
+                        	  	{{x.fName}}&nbsp;{{x.lName}}
+                        	
                         </td>
-                        <td ng-if="!can('80028564')">{{x.fName}}&nbsp;{{x.lName}}</td>
+                        <!-- <td ng-if="!can('80028564')">{{x.fName}}&nbsp;{{x.lName}}</td> -->
                         <td>{{x.email}}</td>
                         <td>
                             {{x.empID}}
@@ -43,18 +53,25 @@
                         </td>
                         <td>{{x.designation}}</td>
                        <!--  <td>{{x.mNum}}</td> -->
-                       <td align="center">
+                       <td>
                           <span ng-if=" x.mNum !=''">{{x.mNum}}<br></span>
                           <span ng-if=" x.mNum === ''" >-<br></span>
                        </td>
                        
                        <!--  <td>{{x.aNum}}</td> -->
-                       <td align="center">
+                       <!-- <td align="center">
                            <span ng-if="x.aNum !=''">{{x.aNum}}<br></span>
                            <span ng-if="x.aNum ===''">-<br></span>
-                       </td>
+                       </td> -->
                         <td>{{x.location}}</td>
                         <td>{{x.created | date:'yyyy-MM-dd'}}</td>
+                        <td ng-if="can('71521952')">
+                        <form class="form-horizontal" ng-submit="deleteMember(x.email)" name="DeleteMemberForm" enctype="multipart/form-data">
+                          <a class="btn btn-md btn-info" style="background-color: #1abc9c;border:none;" href="/dashboard/team/member-profile/{{x._id}}" title="Edit Profile"><i class="fa fa-pencil-square-o" aria-label="edit"></i>
+</a>
+                          <button class="btn btn-danger" style="background-color: #C9302C;border:none;" type="submit" ng-click="findName(x.fName, x.lName)" value="submit" title="Delete Member"><i class="fa fa-trash-o fa-lg" aria-label="Delete"></i></button>
+                          </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>

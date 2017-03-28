@@ -5,6 +5,7 @@ angular.module('helpDesk')
         .controller('teamCtrl', ['$scope', '$window', 'httpService', '$stateParams', '$filter', '$location', 'AclService','Upload',
             function ($scope, $window, httpService, $stateParams, $filter, $location, AclService,Upload) {
                 $scope.udata = {};
+                $scope.membersList = [];
                 $scope.can = AclService.can;
                 
                 $scope.addMember = function (memberDetails) {
@@ -370,11 +371,58 @@ angular.module('helpDesk')
                                 //console.log($scope.data);
                                 $("#loader").hide();
                                 $scope.data = response.data;
+                                $scope.membersList = $scope.data;
+                                console.log("members list",$scope.data);
                             }, function (reason) {
                                 $("#loader").hide();
                                 $location.path('/oops/');
                             });
                 }
+
+                 $scope.findName = function (fName, lName){
+                // alert(fName+' '+lName)
+                  $scope.fName = fName;
+                  $scope.lName = lName;
+
+                 }
+                $scope.deleteMember = function (email) {
+                    //$scope.name = $("#name").is(email).text();alert($scope.name);
+                 $scope.email = email;
+                 //alert(email);
+                
+                    
+                    if(confirm("Are you sure to delete ")){
+                    var url = "/api/team/delete-Member";
+                    var params = {
+                        email: email
+                    };
+                    $("#loader").show();
+                    httpService.callRestApi(params, url, "POST").then(function (response) {
+                        
+                        /***-------***/
+                        /* update view after delete */
+
+                        var index = $scope.membersList.map(function(e) { return e.email; }).indexOf(email);
+                        
+                        console.log("after deletion",$scope.membersList.splice(index,1));
+                        /* end update view after delete */
+
+                        $("#loader").hide();
+                        $("#danger-alert").hide();
+                        $("#success-alert").show();
+                        $('html, body').animate({scrollTop: 0}, 500);
+                        
+                    }, function (reason) {
+                        $("#loader").hide();
+                        $("#success-alert").hide();
+                        $("#danger-alert").show();
+                        $location.path("/oops/");
+                    });
+                } else {
+                    $("#loader").hide();
+                }
+
+                };
 
                 // Getting Permissions Details
                 $scope.getRolesList = function () {

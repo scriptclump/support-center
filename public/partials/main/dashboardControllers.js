@@ -1,5 +1,5 @@
 /**
- * Dashboard Controller
+ * Created by Pkp on 5/15/2016.
  */
 angular.module('helpDesk')
         .controller('dashboardCtrl', ['$scope', '$window', 'httpService', '$filter', '$location',  'DTOptionsBuilder', 'ticketsManager',
@@ -76,7 +76,6 @@ angular.module('helpDesk')
                       $scope.TotalTickets=parseInt($scope.TotalTickets) + 1;
                   });
             }])
-
         .factory('Ticket', ['$http', function ($http) {
                 function Ticket(ticketData) {
                     if (ticketData) {
@@ -163,70 +162,4 @@ angular.module('helpDesk')
                 };
                 return ticketsManager;
             }])
-                    /*ticketsManager.loadAllTickets().then(function (tickets) {
-                        $scope.data = tickets;
-                        //console.log($scope.data);
-                        $scope.TotalTickets = tickets.length;
-                        $scope.loadSolvedTickets(tickets);
-                        //$scope.loadTatExceededTickets(tickets);
-                        //console.log('total Count',$scope.TotalTickets);
-                    }, function (error) {
-                        console.log(error);
-                    })
-                }
-                $scope.SolvedCount = 0;
-                $scope.TimeExceededTicketsCounts = 0;
-                $scope.TimeExceededTickets = [];
-                $scope.PendingTickets = [];
-                $scope.RequestTicketsCount = 0;
-                $scope.IssueTicketsCount = 0;
-                $scope.loadSolvedTickets = function (tickets) {
-                    if (tickets) {
-                        //console.log(tickets);
-                        angular.forEach(tickets, function (value, key) {
-                            //console.log(value);
-//                            console.log(value.status);
-                            if (value.status == 'Closed') {
-                                $scope.SolvedCount = $scope.SolvedCount + 1;
-                            }
-                            //console.log(value.issue_type_cat_1);
-                            if (value.issue_type_cat_1 == 'issue') {
-                                $scope.IssueTicketsCount = $scope.IssueTicketsCount + 1;
-                            }
-                            if (value.issue_type_cat_1 == 'request') {
-                                $scope.RequestTicketsCount = $scope.RequestTicketsCount + 1;
-                            }
-                            if (value.status !== 'New' && value.status !== 'Open' && value.status !== 'Closed') {
-                                //console.log(value.status);
-                                $scope.PendingTickets.push(value);
-                            }
-                            if (value.master_st !== 0 && value.status !== 'Closed'&&value.status !== 'New') {
-                                //console.log('value.master_st',value.master_st);
-                                //$scope.TatExceeededTicketsCount = $scope.TatExceeededTicketsCount + 1;
-                                //console.log();
-                                var StartedAt = value.master_st;
-                                var Current_Date = Date.now();
-                                var tat_time = value.tat_time || 1;
-                                //console.log('tat time set/default', tat_time);
-                                var startDateFormated = new Date(StartedAt);
-                                //console.log('actually started at', startDateFormated);
-                                var shouldEndAt=startDateFormated.setHours(startDateFormated.getHours() + tat_time);
-                                var shouldEndAtFormated=new Date(shouldEndAt);
-//                                console.log('it should End at', shouldEndAtFormated);
-//                                console.log('current time ',Date(Current_Date));
-                                if (Current_Date>shouldEndAt) {
-                                    $scope.TimeExceededTicketsCounts = $scope.TimeExceededTicketsCounts + 1;
-                                    $scope.TimeExceededTickets.push(value);
-                                    //console.log('warning exceeded! ticket ID',value.ticketID);
-                                } else {
-                                    console.log('Not Exceeded!');
-                                }
-//                                var deadLineAt =
-//                                        console.log(Math.floor(Date.now()));
-                            }
-                            //this.push(key + ': ' + value);
-                        });
-                    }
-                }
-                */
-
+            

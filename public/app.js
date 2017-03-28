@@ -1,4 +1,4 @@
-angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstrap', 'yaru22.angular-timeago', 'ngFileUpload', 'checklist-model'])
+angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstrap', 'yaru22.angular-timeago', 'ngFileUpload', 'checklist-model','autocomplete'])
         .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
             $locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise('login');
@@ -29,11 +29,11 @@ angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstr
                         abstract: true,
                         templateUrl: '/partials/main/dashboard-frame',
                         resolve : {
-                        	'acl' : ['$q','AclService','AuthService', function ($q,AclService,AuthService) {
-                        		if(!AuthService.isAuthenticated()){
-                            		return $q.reject('NotLoggedIn');
-                            	}
-                        	}]
+                            'acl' : ['$q','AclService','AuthService', function ($q,AclService,AuthService) {
+                                if(!AuthService.isAuthenticated()){
+                                    return $q.reject('NotLoggedIn');
+                                }
+                            }]
                         }
                     })
                     .state('dashboard.main', {
@@ -210,18 +210,18 @@ angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstr
                             'acl': ['$q', 'AclService','AuthService', function ($q, AclService,AuthService) {
                                     if (AclService.can('14764455') || AclService.can('64159294') || AclService.can('37810236') || AclService.can('78894315')) {
                                         // Has proper permissions
-                                    	console.log('AclService')
+                                        console.log('AclService')
                                         return true;
                                     } 
                                     else {
-                                    	if(!AuthService.isAuthenticated()){
-                                    	
-                                    		return $q.reject('NotLoggedIn');
-                                    	}else{
+                                        if(!AuthService.isAuthenticated()){
+                                        
+                                            return $q.reject('NotLoggedIn');
+                                        }else{
                                              return $q.reject('Unauthorized');
                                             
                                           }
-                                    	}
+                                        }
                                        
                                     
                                 }]
@@ -327,9 +327,10 @@ angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstr
                     $state.go('dashboard.Unauthorized');
                 }
                 //console.log("from state",evt, "toState",toState,"toParams", toParams, fromState, fromParams, error);
-                if (error === 'NotLoggedIn') {                
-                	AuthService.fromState = toState.name;
-                	AuthService.toParams = toParams;
+                if (error === 'NotLoggedIn') {
+                
+                    AuthService.fromState = toState.name;
+                    AuthService.toParams = toParams;
                     $state.go('login');
                 }
                 
@@ -339,7 +340,8 @@ angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstr
                     //console.log('user already logged in',fromState);
                     //$state.go('dashboard.main');
                     if (AclService.can('14764455')) {
-                        $state.go('dashboard.main');                        
+                        $state.go('dashboard.main');
+                        
                     } else {
                         $state.go('dashboard.welcome');
                     }
@@ -415,13 +417,6 @@ angular.module('helpDesk', ['ngResource', 'ui.router', 'datatables', 'ui.bootstr
                     //$scope.ticketsList.push(ticket);
                     $rootScope.$broadcast('NewTicket', ticket);
                 });
-
-                // $('.side-menu').hover(
-                //        function(){ $(".container-fluid").addClass('container-fluid-hover') },
-                //        function(){ $(".container-fluid").removeClass('container-fluid-hover') }
-                // )
-
-                
             }])
         .constant('AUTH_EVENTS', {
             notAuthenticated: 'auth-not-authenticated'

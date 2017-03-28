@@ -1,14 +1,51 @@
 angular.module('helpDesk')
         .controller('ticketCtrl', ['$scope', '$window', 'httpService', '$stateParams', '$filter', '$location', '$sce', '$rootScope', '$timeout', 'DTOptionsBuilder', '$modal', 'Upload', 'AclService',
-            function ($scope, $window, httpService, $stateParams, $filter, $location, $sce, $rootScope, $timeout, DTOptionsBuilder, $modal, Upload, AclService) {
+            function ($scope, $window, httpService, $stateParams, $filter, $location, $sce, $rootScope, $timeout, DTOptionsBuilder, $modal, Upload, AclService,autocomplete) {
                 $scope.commentsList = {};
                 $scope.ticketsList = [];
                 var host = $location.host();
                 host = location.host;
                 var protocol = $location.protocol();
                 $rootScope.appUrl = protocol + "://" + host + "/";
+                //AutoComplete search starts Here 
+                //Getting all the employee's list here
+                $scope.getAllEmps = function(){
+                    var output = [];
+                    var url = "/api/team/members";
+                    httpService.callRestApi(null,url,"GET").then(function(response){
+                    $scope.empList=response.data;
+                    console.log($scope.empList);
+                  });  
+                }
+                //searching the employee's based on input given
+                $scope.searchByName = function(value){
+                    var output=[];
+                    angular.forEach($scope.empList,function(empName){
+                    output.push(empName.fName+' '+empName.lName);
+                  });
+                    if(value.length>=3){
+                    $scope.employees =  output;
+                    }
+                    else{
+                    $scope.employees =  []; 
+                    }        
+                }
+                $scope.selectName = function(name){
+                    angular.forEach($scope.empList,function(empName){
+                    var employeeName = empName.fName+' '+empName.lName;
+                    if(employeeName===name){
+                    //set reporter name and email to controller scope 
+                    $scope.data.reported_by=name;
+                    $scope.reporterEmail = empName.email;
+                    $scope.reporterName = empName.fName;
+                    $scope.reporterName = empName.fName+' '+empName.lName;
+
+                    }
+                  })
+                }
+                //AutoComplete search Ends Here
                 $scope.loadTicketsFrom = function (data) {
-                    console.log("data", data)
+                    console.log("data", data);
                     var url = "/api/ticketsRelated/ticket";
                     if (data != undefined) {
                         httpService.callRestApi({status: data}, url, "GET").then(function (response) {
@@ -27,6 +64,39 @@ angular.module('helpDesk')
                     }
                 }
 
+               $scope.deleteTicket = function (ticketID) { 
+              $scope.ticketID = ticketID;
+              //alert(ticketID);
+                //console.log("list+++++", $scope.ticketsList)
+                    //$("#loader").show();
+                    if(confirm("Are sure want to delete")){
+                    var url = "/api/ticketsRelated/delete-Ticket";
+                    var params = {
+                        tid: ticketID
+                    };
+                    httpService.callRestApi(params, url, "POST").then(function (response) {
+                        
+                        /***-------***/
+                        /* important for update view after delete */
+                        var index = $scope.ticketsList.map(function(e) { return e.ticketID; }).indexOf(ticketID);
+                        console.log("index of index",index);
+                        console.log("after deletion",$scope.ticketsList.splice(index,1));
+                      
+                        $("#danger-alert").hide();
+                        $("#success-alert").show();
+                        $('html, body').animate({scrollTop: 0}, 500);
+                        console.log("delete success")
+                    }, function (reason) {
+                        $("#success-alert").hide();
+                        $("#danger-alert").show();
+                        $location.path("/oops/");
+                    });
+                } else {
+
+                }
+                         
+             };
+
                 $scope.newTicketSubmit = function (data) {
                     if (data.subject.toString().length == 0) {
                         $scope.errorMsg = 'Please Enter Issue/Request Subject';
@@ -35,8 +105,24 @@ angular.module('helpDesk')
                         $scope.errorMsg = 'Please Enter Issue/Request Description';
                         $("#danger-alert").show();
                     } else {
-                        var email = $rootScope.userObj.email;
-                        var name = $rootScope.userObj.fName;
+                        var email='';
+                        var name ='';
+                        if(data.reported_by){
+                            if(data.reported_by === $scope.reporterName){
+                            email=$scope.reporterEmail;
+                            name = $scope.reporterName;
+                        }else{
+                              $scope.errorMsg = $scope.data.reported_by;
+                              $("#success-alert").hide();
+                             $("#Unknown-alert").show();
+                             exit();
+                        }
+                    }
+                        else{
+                            email = $rootScope.userObj.email;
+                            name= $rootScope.userObj.fName; 
+                        }
+                        
                         var ticketID = Date.now();
                         var values = {
                             ticketID: ticketID,
@@ -58,6 +144,7 @@ angular.module('helpDesk')
                             if (resp.data.error_code === 0) { //validate success
                                 $scope.data = '';
                                 $("#success-alert").show();
+                                $("#Unknown-alert").hide();
                             } else {
                                 $("danger-alert").show();
                                 console.log('Error while create ticket :: ', resp.data.err_desc);
@@ -172,6 +259,7 @@ angular.module('helpDesk')
                         httpService.callRestApi({email: email}, url, "POST").then(function (response) {
                             $("#loader").hide();
                             var tickets = response.data;
+                            //console.log(tickets.data);
                             $scope.ticketsList = tickets.data;
                         }, function (reason) {
                             $("#loader").hide();
@@ -232,11 +320,11 @@ angular.module('helpDesk')
 
                 $scope.sendEmailToApprover = function (ticketDetail) {
                     if ($.inArray(ticketDetail.approver, ticketDetail.approved_list) == -1) {
+                        //alert(ticketDetail.approved_list);
                         var approvername = $('#approvetList option:selected').text();
-                        //alert(approvername);
                         var link = $rootScope.appUrl + "dashboard/tickets/ticket-detail/" + ticketDetail.ticketID;
                         var ticketOwner = ticketDetail.ownerid.fName + "  " + ticketDetail.ownerid.lName;
-                        var subject = ticketDetail.ticketID + " " + ticketDetail.empName + " " + "Need Approval to the Ticket";
+                        var subject = ticketDetail.ticketID + "_approver" + " " + "Need Approval to the Ticket";
                         var status_old = ticketDetail.status;
                         var params = {
                             tid: ticketDetail.ticketID,
@@ -245,7 +333,7 @@ angular.module('helpDesk')
                             subject: subject,
                             description: ticketDetail.description,
                             empName: ticketDetail.empName,
-                            link: link,
+                            link: link
                             
                         }
 
@@ -257,8 +345,9 @@ angular.module('helpDesk')
                                    
                                     $scope.data.status = 'Pending for Approval'; // Update UI for update on Status
                                     TrackTimeAutomate('Pending for Approval'); // Set Timer Off
+                                    location.reload();
                                     $("#success-alert").show();
-                                    
+
                                 }, function (reason) {
                                     $("#loader").hide();
                                     $scope.errorMsg = reason;
@@ -267,21 +356,21 @@ angular.module('helpDesk')
                       
                         
                         var urll = "/api/ticketsRelated/activityLogs-approval";
-                       
-                        var actapmsg = "  " + ticketDetail.empName + " Need Approval from " + approvername;
-                         var actmsg = " "  + " Status has been changed from " + status_old + " to Pending for Approval on " + $filter('date')(new Date(), 'yyyy-MM-dd HH:mm:ss');
-                        httpService.callRestApi({tid: ticketDetail.ticketID, approver: ticketDetail.approver, msg1: actapmsg, msg: actmsg}, urll, "POST")
+                        if(status_old!="Pending for Approval"){
+                        var actmsg = "," + " Status has been changed from " + status_old + " to Pending for Approval on " + $filter('date')(new Date(), 'yyyy-MM-dd HH:mm:ss');
+                        } else {
+                            var actmsg = " ";
+                        }
+                        var actapmsg = " " + ticketDetail.empName + " Need Approval from " + approvername + " " + actmsg;
+                        httpService.callRestApi({tid: ticketDetail.ticketID, changed_status_time:Date.now(), approver: ticketDetail.approver, msg1: actapmsg}, urll, "POST")
                                 .then(function (response) {
                                     console.log(response);
-                                    //$scope.data.status = 'Pending for Approval'; // Update UI for update on Status
-                                    //TrackTimeAutomate('Pending for Approval'); // Set Timer Off
-                                    //$("#success-alert").show();
+                                   
                                     if (response.status == 200) {
+                                        
                                     console.log("Status updated ...", response);
                                     $scope.data.activityLogs.push(actapmsg);
-                                    if(status_old!="Pending for Approval"){
-                                    $scope.data.activityLogs.push(actmsg);
-                                  }
+                                    
                                 }
                                 }, function (reason) {
                                     //$("#loader").hide();
@@ -484,7 +573,7 @@ angular.module('helpDesk')
                         reportedbyemail: $scope.data.empEmail,
                         comment: data.comment,
                         userid: $rootScope.userObj._id,
-                        username: $rootScope.userObj.fName + $rootScope.userObj.lName,
+                        username: $rootScope.userObj.fName + ' ' + $rootScope.userObj.lName,
                         notify: false
                     };
                     var url = "/api/ticketsRelated/add-comment-approver";
@@ -511,7 +600,7 @@ angular.module('helpDesk')
                         reportedbyemail: $scope.data.empEmail,
                         comment: empComment.comment,
                         userid: $rootScope.userObj._id,
-                        username: $rootScope.userObj.fName + $rootScope.userObj.lName,
+                        username: $rootScope.userObj.fName + ' ' + $rootScope.userObj.lName,
                         name:$scope.data.empName,
                         notifyEmp: true
                     };
@@ -817,6 +906,7 @@ angular.module('helpDesk')
                     }
                 }
                 $scope.dtOptions = DTOptionsBuilder.newOptions().withOption('order', [[0, 'desc']]);
+                $scope.ticketlist = DTOptionsBuilder.newOptions().withOption('order', [[3, 'desc']]);
                 $scope.open = function (description) {
                     $scope.descrip = description;
                     var modalInstance = $modal.open({

@@ -22,8 +22,8 @@ module.exports = {
     mailListener: {
 //        username: "ithelpdesk@charterglobal.com",
 //        password: "Charter5225",
-    	username: "bsharma@charterglobal.com",
-        password: "S3curity#67",
+    	username: "bgurram@charterglobal.com",
+        password: "gb514@514@@@",
         host: "outlook.office365.com",
         port: 993,
         tls: true,
@@ -33,14 +33,14 @@ module.exports = {
         fetchUnreadOnStart: false,
         attachments: true,
         keepalive: true,
-        attachmentOptions: {directory:"./public/attachments/"},
+        attachmentOptions: {directory:"././public/attachments/"},
         smtpHost:'smtp.office365.com',
     },
     mailer:{
 //        username: "ithelpdesk@charterglobal.com",
 //        password: "Charter5225",
-    	username: "bsharma@charterglobal.com",
-        password: "S3curity#67",
+    	username: "bgurram@charterglobal.com",
+        password: "gb514@514@@@",
         smtpHost:'smtp.office365.com',
         turnOff:false
     },

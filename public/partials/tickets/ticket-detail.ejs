@@ -101,7 +101,7 @@
                                             <option value="Open">Open</option>
                                             <option value="Pending for Approval">Pending for Approval</option>
                                             <option value="Working with Vendor">Working with Vendor</option>
-                                            <option value="Work in Progress">Work in progress</option>
+                                            <option value="Work in Progress">Work in Progress</option>
                                             <option value="Close">Close</option>
                                             <option value="Re-Open">Re-Open</option>
                                         </select>
@@ -225,7 +225,7 @@
                                     <div id="tabcomments" class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="activity-tab" ng-if="can('14764455') || data.approved_list.indexOf(loggedInUserObj._id) != -1">
                                             <ul class="list-group" ng-repeat="activity in data.activityLogs track by $index">
-                                                <li class="list-group-item fa fa-user" aria-hidden="false" id="activity_list">{{activity}}</li>
+                                                <li class="list-group-item fa fa-user" aria-hidden="false" id="activity_list" style="line-height:200%">{{activity}}</li>
                                             </ul> 
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="team-comment" ng-if="can('14764455')">
@@ -244,8 +244,8 @@
                                                         <ul class="message-list">
                                                             <li ng-repeat="comment in commentsList|filter:{comment_type:'team_team'}|orderBy: '-created' track by $index">
                                                                 <div class="message-block-comment">
-                                                                    <div>                                                                                    
-                                                                        <span class="usernameby">by</span><span class="username">{{comment.commentedByName}}</span> 
+                                                                    <div style="text-transform: capitalize;">                                                                                    
+                                                                        <span class="usernameby">by</span><span class="username"> {{comment.commentedByName}}</span> 
                                                                         <span class="message-datetime">{{comment.created|timeAgo}}</span>
                                                                     </div>
                                                                     <div class="message">{{comment.comment}}</div>
@@ -272,8 +272,8 @@
                                                         <ul class="message-list">
                                                             <li ng-repeat="comment in commentsList|filter:{comment_type:'team_emp'}|orderBy: '-created' track by $index">
                                                                 <div class="message-block-comment">
-                                                                    <div>                                                                                    
-                                                                        <span class="usernameby">by</span><span class="username">{{comment.commentedByName}}</span> 
+                                                                    <div style="text-transform: capitalize;">                                                                                    
+                                                                        <span class="usernameby">by</span><span class="username"> {{comment.commentedByName}}</span> 
                                                                         <span class="message-datetime">{{comment.created|timeAgo}}</span>
                                                                     </div>
                                                                     <div class="message" ng-bind-html="comment.comment | renderHtml"></div>
@@ -310,8 +310,8 @@
                                                         <ul class="message-list">
                                                             <li ng-repeat="comment in commentsList|filter:{comment_type:'team_approver'}|orderBy: '-created' track by $index">
                                                                 <div class="message-block-comment">
-                                                                    <div>                                                                                    
-                                                                        <span class="usernameby">by</span><span class="username">{{comment.commentedByName}}</span> 
+                                                                    <div style="text-transform: capitalize;">                                                                                    
+                                                                        <span class="usernameby">by</span><span class="username"> {{comment.commentedByName}}</span> 
                                                                         <span class="message-datetime">{{comment.created|timeAgo}}</span>
                                                                     </div>
                                                                     <div class="message" ng-bind-html="comment.comment | renderHtml"></div>

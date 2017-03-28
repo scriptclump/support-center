@@ -83,6 +83,30 @@ exports.addMember = function (req, res) {
     });
 };
 
+exports.deleteMember = function (req, res) {
+var email = req.body.email;
+console.log("request remove id",req.body);
+
+Members.remove({email: email}, function (err, updated) {
+        if (err) {
+            res.status(500).json(err);
+          } else {
+
+             User.remove({email: email}, function (err, updated) {
+                if(err){
+                  res.status(500).json(err);
+                  }else{
+                      user_authorityModel.remove({email: email}, function (err, updated) {
+                         res.status(200);
+                         res.send({success: true, data: updated});
+                      });
+                    }
+                 });
+               }
+            });
+
+}
+
 exports.getMemberById = function (incId, res) {
     Members.find({_id: incId}, function (err, details) {
         if (err) {
@@ -101,6 +125,7 @@ exports.updateMember = function (payLoad, res) {
     });
 }
 exports.membersList = function (res) {
+    //console.log("coming");
 	params = {'email': {$ne: 'superuser@charterglobal.com'}}
     Members.find(params,function (err, docs) {
                 if (err)

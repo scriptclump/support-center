@@ -1,0 +1,105 @@
+{ 
+    "_id" : ObjectId("581858f93ed5b10f945854f4"), 
+    "created" : ISODate("2016-11-01T08:57:29.553+0000"), 
+    "action" : "imapConnected", 
+    "error" : "imapConnected", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5818594f1efaf114bcc0507b"), 
+    "created" : ISODate("2016-11-01T08:58:55.189+0000"), 
+    "action" : "imapConnected", 
+    "error" : "imapConnected", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185b3e0b6e4e04fc32a23a"), 
+    "created" : ISODate("2016-11-01T09:07:10.028+0000"), 
+    "action" : "error", 
+    "error" : "Error: LOGIN failed.", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185b5326a43d19a092860a"), 
+    "created" : ISODate("2016-11-01T09:07:31.692+0000"), 
+    "action" : "error", 
+    "error" : "Error: LOGIN failed.", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185b73ace1611444f1aa94"), 
+    "created" : ISODate("2016-11-01T09:08:03.178+0000"), 
+    "action" : "imapConnected", 
+    "error" : "imapConnected", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185ba960d3df191c57fa30"), 
+    "created" : ISODate("2016-11-01T09:08:57.426+0000"), 
+    "action" : "error", 
+    "error" : "Error: LOGIN failed.", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185c0526a88906acb006e1"), 
+    "created" : ISODate("2016-11-01T09:10:29.158+0000"), 
+    "action" : "error", 
+    "error" : "Error: LOGIN failed.", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185c3475f0de14bc8cc668"), 
+    "created" : ISODate("2016-11-01T09:11:16.391+0000"), 
+    "action" : "imapConnected", 
+    "error" : "imapConnected", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d67e3f7601990b2806b"), 
+    "created" : ISODate("2016-11-01T09:16:23.442+0000"), 
+    "action" : "imapConnected", 
+    "error" : "imapConnected", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7ce3f7601990b2806c"), 
+    "created" : ISODate("2016-11-01T09:16:44.658+0000"), 
+    "action" : "error", 
+    "error" : "Error: ENOENT: no such file or directory, open 'E:\\it-help-desc\\public\\attachments\\1477991804641-attachment'", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7ce3f7601990b2806d"), 
+    "created" : ISODate("2016-11-01T09:16:44.661+0000"), 
+    "action" : "error", 
+    "error" : "Error: ENOENT: no such file or directory, open 'E:\\it-help-desc\\public\\attachments\\1477991804642-attachment.eml'", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7ce3f7601990b2806e"), 
+    "created" : ISODate("2016-11-01T09:16:44.919+0000"), 
+    "action" : "error", 
+    "error" : "Error: ENOENT: no such file or directory, open 'E:\\it-help-desc\\public\\attachments\\1477991804918-attachment'", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7ce3f7601990b2806f"), 
+    "created" : ISODate("2016-11-01T09:16:44.920+0000"), 
+    "action" : "error", 
+    "error" : "Error: ENOENT: no such file or directory, open 'E:\\it-help-desc\\public\\attachments\\1477991804918-attachment.eml'", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7de3f7601990b28070"), 
+    "created" : ISODate("2016-11-01T09:16:45.141+0000"), 
+    "action" : "error", 
+    "error" : "Error: ENOENT: no such file or directory, open 'E:\\it-help-desc\\public\\attachments\\1477991805140-attachment'", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58185d7de3f7601990b28071"), 
+    "created" : ISODate("2016-11-01T09:16:45.142+0000"), 
+    "action" : "error", 
+    "error" : "Error: ENOENT: no such file or directory, open 'E:\\it-help-desc\\public\\attachments\\1477991805140-attachment.eml'", 
+    "__v" : NumberInt(0)
+}

@@ -18,10 +18,10 @@ module.exports = {
         port: process.env.PORT || 5000
     },
     mailListener: {
-        username: "bsharma@charterglobal.com",
-        password: "S3curity#67",
-    	//username: "bgurram@charterglobal.com",
-     //    password: "gb514@514@@@",
+        //username: "ithelpdesk@charterglobal.com",
+        //password: "Charter5225",
+    	username: "cmothkuri@charterglobal.com",
+        password: "Chaithu@123",
         host: "outlook.office365.com",
         port: 993,
         tls: true,
@@ -34,10 +34,10 @@ module.exports = {
         smtpHost:'smtp.office365.com',
     },
     mailer:{
-        username: "bsharma@charterglobal.com",
-        password: "S3curity#67",
-    	// username: "bgurram@charterglobal.com",
-     //    password: "gb514@514@@@",
+        //username: "ithelpdesk@charterglobal.com",
+        //password: "Charter5225",
+    	username: "cmothkuri@charterglobal.com",
+        password: "Chaithu@123",
         smtpHost:'smtp.office365.com',
         turnOff:false
     },

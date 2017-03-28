@@ -1,0 +1,136 @@
+{ 
+    "_id" : ObjectId("57e53473e4da70181cf869c1"), 
+    "email" : "superuser@charterglobal.com", 
+    "password" : "$2a$10$/aLJ98T9QMa.g1E8AHXAgOKKNeHnoQTm5lcTdiw9RrsHTMo.wNxmi", 
+    "created" : ISODate("2016-09-23T13:56:03.979+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("57e53474e4da70181cf869c2")
+}
+{ 
+    "_id" : ObjectId("58186c585c33480edc9220ac"), 
+    "email" : "nchenreddy@charterglobal.com", 
+    "password" : "$2a$10$C20EfVLvYgWnVzYtGmu5SuLzrne9lFjCe/hzxawhuFTvhbJmncWxO", 
+    "created" : ISODate("2016-11-01T10:20:08.710+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("58186c585c33480edc9220ad")
+}
+{ 
+    "_id" : ObjectId("5819c9efdac0950360a0c794"), 
+    "email" : "cmothkuri@charterglobal.com", 
+    "password" : "$2a$10$CDuWutnumkpNPeE4BwvWie5YFH.TKsA20NyLfJFqAhNbRulKtRfxy", 
+    "created" : ISODate("2016-11-02T11:11:43.010+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("5819c9efdac0950360a0c798")
+}
+{ 
+    "_id" : ObjectId("5819c9efdac0950360a0c793"), 
+    "email" : "bsahoo@test.com", 
+    "password" : "$2a$10$SJdW9T7xgB9Cu2WSSJ1.felQXJGl48Wlzky3qpYRWnB4nXNR0mMU6", 
+    "created" : ISODate("2016-11-02T11:11:43.007+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("5819c9efdac0950360a0c796")
+}
+{ 
+    "_id" : ObjectId("5819c9efdac0950360a0c795"), 
+    "email" : "bgurram@charterglobal.com", 
+    "password" : "$2a$10$cJ4MZsjCJh0gXCrfN8VkMuV7JvTDExbFXuCXAzQx0LMbNPCicgNNW", 
+    "created" : ISODate("2016-11-02T11:11:43.215+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("5819c9efdac0950360a0c797")
+}
+{ 
+    "_id" : ObjectId("5819cd6eb8cc9f1cb4465cba"), 
+    "email" : "nipun15@gmail.com", 
+    "password" : "$2a$10$XpuUgEnh/AtmQ4J9ZiZPjOGX4M/Pqk4dPtmGxRLrtA4dSU7YyXa4G", 
+    "created" : ISODate("2016-11-02T11:26:38.346+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("5819cd6eb8cc9f1cb4465cbe")
+}
+{ 
+    "_id" : ObjectId("5819ea3d1d4a602648e8bdea"), 
+    "email" : "basanth@gmail.com", 
+    "password" : "$2a$10$U6OUbNnmvCK/dJjCf67YV.rtGRbwIJ8pvB.bzsKBRPpCw.MYKBaO.", 
+    "created" : ISODate("2016-11-02T13:29:33.554+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("5819ea3d1d4a602648e8bdee")
+}
+{ 
+    "_id" : ObjectId("581b0d3082851d1c8c91e880"), 
+    "email" : "basanth123@gmail.com", 
+    "password" : "$2a$10$AykMyNZTgvxdQUeaVyTOYOD.3bmZx/qG7MYSg7eqBIFacGFBjYeaq", 
+    "created" : ISODate("2016-11-03T10:10:56.343+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("581b0d3082851d1c8c91e884")
+}
+{ 
+    "_id" : ObjectId("581b0de782851d1c8c91e886"), 
+    "email" : "basanth13@gmail.com", 
+    "password" : "$2a$10$NeQo1G/Vq2JIa6IDqUFiHesg3WI4jJQcqgs0c4WZQh0K9VNZ5h/ku", 
+    "created" : ISODate("2016-11-03T10:13:59.377+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("581b0de782851d1c8c91e88a")
+}
+{ 
+    "_id" : ObjectId("582477c08137730ce49b6340"), 
+    "email" : "kagarwal@charterglobal.com", 
+    "password" : "$2a$10$zDbx/e0NT7IxuNJQV23l/ec2OoSuKzmP87j/wJ42F1SSxBXuLgIW6", 
+    "created" : ISODate("2016-11-10T13:36:00.159+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("582477c08137730ce49b6341")
+}
+{ 
+    "_id" : ObjectId("58296eccb380b71ee85c7f98"), 
+    "email" : "manager@charterglobal.com", 
+    "password" : "$2a$10$8Ca/t468y7TQxW1LeLGARuUv0r1a5y4A/FDGyDdZC0mSZC8LbsxEO", 
+    "created" : ISODate("2016-11-14T07:59:08.311+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("58296eccb380b71ee85c7f99")
+}
+{ 
+    "_id" : ObjectId("5829aee58d6456238433ff0c"), 
+    "email" : "bsahoo@charterglobal.com", 
+    "password" : "$2a$10$SuKFXbb0uV4DJWoW.rlYlO3Low4n5yH0Op5nvWOvApxun302Mp0Gq", 
+    "created" : ISODate("2016-11-14T12:32:37.400+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("5829aee58d6456238433ff0d")
+}
+{ 
+    "_id" : ObjectId("582b05b977648428f8b30e69"), 
+    "email" : "sahoo@charterglobal.com", 
+    "password" : "$2a$10$VcnnXIs.u.EM/28yI.RpZeuma9Q558Gi5yd35bzqZ8fSai9OlGdbS", 
+    "created" : ISODate("2016-11-15T12:55:21.235+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("582b05b977648428f8b30e6a")
+}
+{ 
+    "_id" : ObjectId("582b08c177648428f8b30e6c"), 
+    "email" : "reddy@gmail.com", 
+    "password" : "$2a$10$CvkyHovMlsqxnwIK1UiYG.U8y502HBJusn73FRIP9tbSUCUFdBJSa", 
+    "created" : ISODate("2016-11-15T13:08:17.178+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("582b08c177648428f8b30e6d")
+}
+{ 
+    "_id" : ObjectId("582b09a177648428f8b30e6f"), 
+    "email" : "gfh@fdg.vfhg", 
+    "password" : "$2a$10$8w3yqBeY3IRJ/V2mp4z7rON/4fb.WhVH/7f3kBZjJUWV48Jw36fjS", 
+    "created" : ISODate("2016-11-15T13:12:01.678+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("582b09a177648428f8b30e70")
+}
+{ 
+    "_id" : ObjectId("582b0f6a77648428f8b30e78"), 
+    "email" : "prasanth@charterglobal.com", 
+    "password" : "$2a$10$SFL2a9GvXz9KBRdbOuSAYuN2cMsGWpiuZy7xz3u1ADon3xd8WdtFy", 
+    "created" : ISODate("2016-11-15T13:36:42.786+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("582b0f6a77648428f8b30e79")
+}
+{ 
+    "_id" : ObjectId("582b137e77648428f8b30e7b"), 
+    "email" : "soumya@gmail.com", 
+    "password" : "$2a$10$OgGuvsXCECyYmVXgd9u0ZeNqcB.A00fxIW50.ndJqcto/raX0DF6W", 
+    "created" : ISODate("2016-11-15T13:54:06.053+0000"), 
+    "__v" : NumberInt(0), 
+    "profileRef" : ObjectId("582b137e77648428f8b30e7c")
+}

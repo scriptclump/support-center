@@ -15,7 +15,7 @@
                     </div>
                 </a>
             </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <a ui-sref="dashboard.tickets({searchField:'issues'})">
                     <div class="card yellow summary-inline">
                         <div class="card-body">
@@ -29,8 +29,6 @@
                     </div>
                 </a>
             </div>
-
-
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <a ui-sref="dashboard.tickets({searchField:'requests'})">
                     <div class="card green summary-inline">
@@ -60,12 +58,17 @@
                 </a>
             </div>
         </div>
-
-
-
-<div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="panel fresh-color panel-info">
+    <div class="col-xs-14">
+        <ul class="nav nav-pills" style="background-color:#2C3E50;">
+            <li class="active"><a data-toggle="pill" href="#NewTickets"><i class="icon fa fa-bookmark"></i>&nbsp;New Tickets</a></li>
+            <li><a data-toggle="pill" href="#MyAssignedTickets"><i class="icon fa fa-tachometer"></i>&nbsp;My Assigned Tickets</a></li>
+            <li><a data-toggle="pill" href="#PendingTickets"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Pending Tickets</a></li>
+            <li><a data-toggle="pill" href="#WorkinProgressTickets"><i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;Work in Progress Tickets</a></li>
+            <li><a data-toggle="pill" href="#TATExceededTickets"> <i class="icon fa fa-exclamation-triangle"></i>&nbsp;TAT Exceeded Tickets</a></li>
+        </ul>
+    <div class="tab-content">
+        <div id="NewTickets" class="tab-pane fade in active">
+            <div class="panel fresh-color panel-info">
                 <div class="panel-heading">New Tickets</div>
                     <table class="table" datatable="ng" width="100%" dt-options="newTickets">
                         <thead>
@@ -84,52 +87,78 @@
                                 </th>
                                 <td>{{x.title|limitTo:50}}...</td>
                                 <td>
-                                    <span ng-if="x.reportedDate">{{ x.reportedDate | date:"MM/dd/yyyy 'at' h:mma"}}</span>
-                                    <span ng-if="!x.reportedDate">-</span>                                    
+                                    <span ng-if="x.reportedDate" style="margin-left:-10px;">{{ x.reportedDate | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                    <span ng-if="!x.reportedDate">-</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table> 
-               </div>
-
-                <div class="panel fresh-color panel-primary">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">Pending Tickets</div>
-                    <!-- Table -->
-                    <table class="table" datatable="ng" width="100%" dt-options="pendingTickets" >
-                        <thead>
-                            <tr>
-                                <th>Ticket ID</th>
-                                <th>Subject</th>
-                                <th>Assigned To</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="z in PendingTickets |orderBy: '-ticketID'">
-                                <!--                            <tr ng-repeat="z in data|filter:status">-->
-                                <th>
-                                    <u>
-                                        <a href="/dashboard/tickets/ticket-detail/{{z.ticketID}}">{{z.ticketID}}</a>
-                                    </u>
-                                </th>
-                                <td>{{z.title}}</td>
-                                <!-- <td>{{z.assign_to.fName}}</td> -->
-                                <td>
-                                    <span ng-if=" z.assign_to.fName != undefined">{{z.assign_to.fName}}&nbsp;{{z.assign_to.lName}}<br></span>
-                                    <span ng-if=" z.assign_to.fName === undefined" >-<br></span>
-                                </td>
-                                <td>
-                                <span ng-if="z.changed_status_time">{{ z.changed_status_time | date:"MM/dd/yyyy 'at' h:mma"}}</span>
-                                    <span ng-if="!z.changed_status_time">-</span></td>
-                            </tr>                            
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="panel fresh-color panel-primary">
-                    <div class="panel-heading">Work in Progress Tickets</div>
-                    <table class="table" datatable="ng" width="100%" dt-options="WorkinProgressTicket" >
+            </div>
+        </div>
+    <div id="MyAssignedTickets" class="tab-pane fade" >
+        <div class="panel fresh-color panel-success">
+            <div class="panel-heading" style="background-color: #22a7f0;">My Assigned Tickets</div>
+                <table class="table" datatable="ng" width="100%" dt-options="MyAssignedTickets">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Subject</th>
+                            <th>TAT(hrs)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="y in data=(MyTickets|filter:{assign_to:userObj._id}|filter:{status:'!Close'}) |orderBy: -'ticketID'">
+                                <th><u><a href="/dashboard/tickets/ticket-detail/{{y.ticketID}}">{{y.ticketID}}</a></u></th>
+                                <td>{{y.title|limitTo:50}}..</td>
+                                <td>{{y.tat_time}}</td>
+                                <td>{{y.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div id="PendingTickets" class="tab-pane fade">
+        <div class="panel fresh-color panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading" style="background-color: #22a7f0;">Pending Tickets</div>
+                <!-- Table -->
+                <table class="table" datatable="ng" width="100%" dt-options="pendingTickets">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Subject</th>
+                            <th>Assigned To</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="z in PendingTickets |orderBy: '-ticketID'">
+                                <!--<tr ng-repeat="z in data|filter:status">-->
+                            <th>
+                                <u>
+                                    <a href="/dashboard/tickets/ticket-detail/{{z.ticketID}}">{{z.ticketID}}</a>
+                                </u>
+                            </th>
+                            <td>{{z.title}}</td>
+                             <!-- <td>{{z.assign_to.fName}}</td> -->
+                            <td>
+                                <span ng-if=" z.assign_to.fName != undefined" style="margin-left:5px;">{{z.assign_to.fName}}&nbsp;{{z.assign_to.lName}}<br></span>
+                                <span ng-if=" z.assign_to.fName === undefined" >-<br></span>
+                            </td>
+                            <td>
+                                <span ng-if="z.changed_status_time" style="margin-left:-20px;">{{ z.changed_status_time | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                <span ng-if="!z.changed_status_time">-</span>
+                            </td>
+                        </tr>                            
+                    </tbody>
+                 </table>
+            </div>
+    </div>
+    <div id="WorkinProgressTickets" class="tab-pane fade">
+        <div class="panel fresh-color panel-primary">
+                <div class="panel-heading" style="background-color: #22a7f0;">Work in Progress Tickets</div>
+                    <table class="table" datatable="ng" width="100%" dt-options="WorkinProgressTickets" >
                         <thead>
                             <tr>
                                 <th>Ticket ID</th>
@@ -146,69 +175,46 @@
                                 <td>{{z.title|limitTo:50}}..</td>
                                <!--  <td>{{z.assign_to.fName}} {{z.assign_to.lName}}</td> -->
                                <td>
-                                    <span ng-if=" z.assign_to.fName != undefined">{{z.assign_to.fName}}&nbsp;{{z.assign_to.lName}}<br></span>
+                                    <span ng-if=" z.assign_to.fName != undefined" style="margin-left:5px;">{{z.assign_to.fName}}&nbsp;{{z.assign_to.lName}}<br></span>
                                     <span ng-if=" z.assign_to.fName === undefined" >-<br></span>
                                </td>
-                                <td><span ng-if="z.changed_status_time">{{ z.changed_status_time | date:"MM/dd/yyyy 'at' h:mma"}}</span>
-                                <span ng-if="!z.changed_status_time">-</span>
+                                <td>
+                                   <span ng-if="z.changed_status_time" style="margin-left:-20px;">{{ z.changed_status_time | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                   <span ng-if="!z.changed_status_time">-</span>
                                 </td>
                             </tr>                            
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
-
-
-            <div class="panel fresh-color panel-success">
-                    <div class="panel-heading">My Assigned Tickets</div>
-                    <table class="table" datatable="ng" width="100%" dt-options="MyAssignedTickets">
-                        <thead>
-                            <tr>
-                                <th>Ticket ID</th>
-                                <th>Subject</th>
-                                <th>TAT(hrs)</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="y in data=(MyTickets|filter:{assign_to:userObj._id}|filter:{status:'!Close'}) |orderBy: -'ticketID'">
-                                <th><u><a href="/dashboard/tickets/ticket-detail/{{y.ticketID}}">{{y.ticketID}}</a></u></th>
-                                <td>{{y.title|limitTo:50}}..</td>
-                                <td>{{y.tat_time}}</td>
-                                <td>{{y.status}}</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="panel fresh-color panel-primary">
-                    <div class="panel-heading">TAT Exceeded Tickets</div>
-                     <table class="table" datatable="ng" width="100%" dt-options="TATExceededTickets">
-                        <thead>
-                            <tr>
-                                <th>Ticket ID</th>
-                                <th>Subject</th>
-                                <th>Assigned To</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="z in TimeExceededTickets  |orderBy: '-ticketID'">
-                                <th><u><a href="/dashboard/tickets/ticket-detail/{{z.ticketID}}">{{z.ticketID}}</a></u></th>
-                                <td>{{z.title}}</td>
-                                <!-- <td>{{z.assign_to.fname}} {{z.assign_to.lName}}</td> -->
-                                <td>
-                                    <span ng-if=" z.assign_to.fName != undefined">{{z.assign_to.fName}}&nbsp;{{z.assign_to.lName}}<br></span>
-                                    <span ng-if=" z.assign_to.fName === undefined" >-<br></span>
+    </div>
+    <div id="TATExceededTickets" class="tab-pane fade">
+       <div class="panel fresh-color panel-primary">
+            <div class="panel-heading" style="background-color: #22a7f0;">TAT Exceeded Tickets</div>
+                <table class="table" datatable="ng" width="100%" dt-options="TATExceededTickets">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Subject</th>
+                            <th>Assigned To</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="z in TimeExceededTickets  |orderBy: '-ticketID'">
+                            <th><u><a href="/dashboard/tickets/ticket-detail/{{z.ticketID}}">{{z.ticketID}}</a></u></th>
+                            <td>{{z.title}}</td>
+                            <!-- <td>{{z.assign_to.fname}} {{z.assign_to.lName}}</td> -->
+                            <td>
+                                <span ng-if=" z.assign_to.fName != undefined" style="margin-left:5px;">{{z.assign_to.fName}}&nbsp;{{z.assign_to.lName}}<br></span>
+                                <span ng-if=" z.assign_to.fName === undefined" >-<br></span>
                                 </td>
                                 <td>{{z.status}}</td>
                             </tr>                            
                         </tbody>
                     </table>
-                </div> 
+                </div>
+            </div>
         </div>
     </div>
+</div>
 </div>

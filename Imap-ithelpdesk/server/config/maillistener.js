@@ -66,14 +66,12 @@ module.exports = function (mailConfig) {
     });
 
     var tID = null;
-    //var ticketID = Date.now();
     var generateTicketID = function () {
         return Date.now();
     };
 
 
     mailListener.on("attachment", function (attachment) {
-        //console.log('attachements called first');
         if (!tID) {
             tID = generateTicketID();
             console.log('Attachment Ticket-ID NOT exist', tID);
@@ -93,9 +91,6 @@ module.exports = function (mailConfig) {
         aws_s3(attachment, tID);
     });
     mailListener.on("mail", function (mail) {
-        //console.log('Mail Received and ticket ID',tID);
-        //console.log('Attachement Ticket-ID:', tID);
-
         var emp_email = mail.from[0].address;
         // dont allow other email rather than specific email
         if (emp_email && checkDomainExist(emp_email) === false) {
@@ -110,10 +105,7 @@ module.exports = function (mailConfig) {
         var emp_name = mail.from[0].name;
         var subject = mail.subject;
         var description = mail.html;
-        // var cleanedHTMLTags = striptags(description);
         var cleanedHTMLTags = sanitizeHtml(description);
-
-        //var n = subject.match(/^#[0-9]*/);
         if (subject) {
             if (subject.match(/#[0-9]*/)) {
                 var n = subject.match(/#[0-9]*/);
@@ -128,7 +120,6 @@ module.exports = function (mailConfig) {
             }
 
         }
-        //console.log('some subject',n);
         if (n && n[0]) {
             console.log('received a reply Mail');
             if (ticketType === 'approver') {
@@ -159,16 +150,13 @@ module.exports = function (mailConfig) {
 
             tID = null;
         } else {
-            //console.log(tID);
             if (!tID) {
                 tID = generateTicketID();
-                //console.log('Mail Ticket-ID NOT exist', tID);
             }
             var values = {
                 ticketID: tID,
                 email: emp_email,
                 name: emp_name,
-//                subject: subject,
                 description: cleanedHTMLTags
             };
             var result = subject.match(/([\[\(] *)?(RE|FW?) *([-:;)\]][ :;\])-]*|$)|\]+ *$/igm);
@@ -200,6 +188,5 @@ module.exports = function (mailConfig) {
                  tID = null;
             }
         }
-        //console.log('TID nullified');
     });
 };
